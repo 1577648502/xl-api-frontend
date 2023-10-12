@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Qi-API 接口开放平台",
+    "title": "Xl-API 接口开放平台",
     "version": "1.0.0"
   },
   "servers": [

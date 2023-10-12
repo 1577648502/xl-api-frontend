@@ -1,4 +1,4 @@
-import Footer from '@/components/Footer';
+
 import {Link} from '@@/exports';
 import {
   AlipayCircleOutlined,
@@ -17,28 +17,6 @@ import Settings from '../../../../config/defaultSettings';
 import {ProFormCaptcha} from "@ant-design/pro-form";
 import {getCaptchaUsingGET, userEmailLoginUsingPOST, userLoginUsingPOST} from "@/services/qiApi-backend/userController";
 
-const ActionIcons = () => {
-  const langClassName = useEmotionCss(({token}) => {
-    return {
-      marginLeft: '8px',
-      color: 'rgba(0, 0, 0, 0.2)',
-      fontSize: '24px',
-      verticalAlign: 'middle',
-      cursor: 'pointer',
-      transition: 'color 0.3s',
-      '&:hover': {
-        color: token.colorPrimaryActive,
-      },
-    };
-  });
-  return (
-    <>
-      <AlipayCircleOutlined key="AlipayCircleOutlined" className={langClassName}/>
-      <TaobaoCircleOutlined key="TaobaoCircleOutlined" className={langClassName}/>
-      <WeiboCircleOutlined key="WeiboCircleOutlined" className={langClassName}/>
-    </>
-  );
-};
 
 const Login: React.FC = () => {
   const [type, setType] = useState<string>('email');
@@ -108,13 +86,12 @@ const Login: React.FC = () => {
             minWidth: 280,
             maxWidth: '75vw',
           }}
-          logo={<img alt="logo" src="/logo.gif"/>}
-          title="Qi-API 接口开放平台"
-          subTitle={'Qi-API 接口开放平台致力于提供稳定、安全、高效的接口调用服务'}
+          logo={<img alt="logo" src="/logo.png"/>}
+          title="Xl-API 接口开放平台"
+          subTitle={'Xl-API 接口开放平台致力于提供稳定、安全、高效的接口调用服务'}
           initialValues={{
             autoLogin: true,
           }}
-          actions={['其他登录方式 :', <ActionIcons key="icons"/>]}
           onFinish={async (values) => {
             if (type === "account") {
               await handleSubmit(values as API.UserLoginRequest);
@@ -243,7 +220,6 @@ const Login: React.FC = () => {
           </div>
         </LoginForm>
       </div>
-      <Footer/>
     </div>
   );
 };

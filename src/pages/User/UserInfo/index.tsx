@@ -66,7 +66,7 @@ const UserInfo: React.FC = () => {
     },
     {
       title: '我的钱包',
-      description: <span>这里是您的钱包，坤币用于平台接口的调用费用。<br/>除了充值坤币外，您还可以每日签到或者邀请好友注册来获得坤币</span>,
+      description: <span>这里是您的钱包，xl币用于平台接口的调用费用。<br/>除了充值xl币外，您还可以每日签到或者邀请好友注册来获得xl币</span>,
       target: () => ref2.current,
     },
     {
@@ -74,11 +74,6 @@ const UserInfo: React.FC = () => {
       description: '这里是您调用接口的凭证，没有凭证将无法调用接口',
       target: () => ref3.current,
     },
-    {
-      title: '开发者SDK',
-      description: '您可以使用开发者SDK，快速高效的接入接口到您的项目中',
-      target: () => ref4.current,
-    }
   ];
 
   const loadData = async () => {
@@ -395,7 +390,7 @@ const UserInfo: React.FC = () => {
                    </>
                  }
         >
-          <strong>坤币 💰: </strong> <span
+          <strong>xl币 💰: </strong> <span
           style={{color: "red", fontSize: 18}}>{loginUser?.balance}</span>
           <br/>
           <strong>获取更多：</strong>
@@ -456,17 +451,6 @@ const UserInfo: React.FC = () => {
           }
         </ProCard>
         <br/>
-        <ProCard
-          ref={ref4}
-          type="inner"
-          title={<strong>开发者 SDK（快速接入API接口）</strong>}
-          bordered
-        >
-          <Button size={"large"}>
-            <a target={"_blank"} href={"https://github.com/qimu666/qi-api-sdk"}
-               rel="noreferrer"><VerticalAlignBottomOutlined/> Java SDK</a>
-          </Button>
-        </ProCard>
       </ProCard>
       <SendGiftModal invitationCode={loginUser?.invitationCode} onCancel={() => {
         setOpen(false)

@@ -1,4 +1,3 @@
-import Footer from '@/components/Footer';
 import {
   getCaptchaUsingGET,
   userEmailRegisterUsingPOST,
@@ -134,9 +133,9 @@ const Register: React.FC = () => {
             minWidth: 280,
             maxWidth: '75vw',
           }}
-          logo={<img alt="logo" src="/logo.gif"/>}
-          title="Qi-API 接口开放平台"
-          subTitle={'Qi-API 接口开放平台致力于提供稳定、安全、高效的接口调用服务'}
+          logo={<img alt="logo" src="/logo.png"/>}
+          title="Xl-API 接口开放平台"
+          subTitle={'Xl-API 接口开放平台致力于提供稳定、安全、高效的接口调用服务'}
           initialValues={{
             invitationCode: invitationCode
           }}
@@ -333,7 +332,6 @@ const Register: React.FC = () => {
           </div>
         </LoginForm>
       </div>
-      <Footer/>
     </div>
   );
 };

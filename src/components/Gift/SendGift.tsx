@@ -15,9 +15,9 @@ const SendGiftModal: React.FC<Props> = (props) => {
   const {open, onCancel, invitationCode} = props;
   const [api, contextHolder] = notification.useNotification();
 
-  const randomTexts = ["注册即送100坤币💰奖励，Qi-API 接口开放平台为您提供稳定、安全、高效的接口调用服务！",
-    "免费领取100坤币💰奖励，通过链接注册，Qi-API 接口开放平台为您提供稳定、安全、高效的接口调用服务！",
-    "通过链接注册，即可获得100坤币💰奖励，Qi-API 接口开放平台为您提供稳定、安全、高效的接口调用服务！"];
+  const randomTexts = ["注册即送100xl币💰奖励，Xl-API 接口开放平台为您提供稳定、安全、高效的接口调用服务！",
+    "免费领取100xl币💰奖励，通过链接注册，Xl-API 接口开放平台为您提供稳定、安全、高效的接口调用服务！",
+    "通过链接注册，即可获得100xl币💰奖励，Xl-API 接口开放平台为您提供稳定、安全、高效的接口调用服务！"];
   const [giftValue, setGiftValue] = useState(``);
 
   const generateRandomText = () => {
@@ -70,7 +70,7 @@ const SendGiftModal: React.FC<Props> = (props) => {
       <ProCard>
         <div style={{display: "flex", justifyContent: "center", alignItems: "center", alignContent: "center"}}>
           <div style={{marginRight: "20px", fontWeight: "bold"}}>每邀请一个用户注册，您和被邀请者都将获得
-            “<strong>100坤币 </strong>💰奖励”
+            “<strong>100xl币 </strong>💰奖励”
           </div>
           <div onClick={() => {
             handleClick()

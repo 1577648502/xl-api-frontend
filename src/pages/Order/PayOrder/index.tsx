@@ -239,10 +239,7 @@ const PayOrder: React.FC = () => {
                 target={"_blank"}
                 href={"https://gitee.com/qimu6/statement/blob/master/%E6%9F%92%E6%9C%A8%E6%8E%A5%E5%8F%A3%E7%94%A8%E6%88%B7%E5%8D%8F%E8%AE%AE.md#%E6%9F%92%E6%9C%A8%E6%8E%A5%E5%8F%A3%E7%94%A8%E6%88%B7%E5%8D%8F%E8%AE%AE"}
                 rel="noreferrer"> 用户协议 </a>
-          如付款成功后10分钟后未到账，请联系站长微信：
-             <Tooltip placement="bottom" title={<img src={wechat} alt="微信 code_nav" width="120"/>}>
-               <a>aqimu66</a>
-             </Tooltip>
+          如付款成功后10分钟后未到账，请联系站长。
             </span>
             </ProCard>
           </Card>
