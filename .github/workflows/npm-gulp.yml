@@ -5,11 +5,11 @@ on:
   push:
     branches:
       # 你的主分支名
-      - main
+      - master
   pull_request:
     branches:
       # 你的主分支名
-      - main
+      - master
     types:
       - closed
 jobs:
