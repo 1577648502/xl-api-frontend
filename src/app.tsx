@@ -1,19 +1,13 @@
-import {BarsOutlined, ExportOutlined, FileTextOutlined, GithubOutlined, WechatOutlined} from '@ant-design/icons';
 import {SettingDrawer} from '@ant-design/pro-components';
 import type {RunTimeLayoutConfig} from '@umijs/max';
 import {history} from '@umijs/max';
 import {AvatarDropdown, AvatarName} from './components/RightContent/AvatarDropdown';
-import logo from '../public/logo.png';
 import {requestConfig} from '@/requestConfig';
 import Settings from '../config/defaultSettings';
 import {valueLength} from "@/pages/User/UserInfo";
 import {getLoginUserUsingGET} from "@/services/qiApi-backend/userController";
-import {FloatButton, message} from 'antd';
 import React from "react";
-import wechat from '@/../public/assets/WeChat.jpg';
-import LightColor from "@/components/Icon/LightColor";
 import {Docs, helloWord} from "@/components/RightContent";
-import SendGift from "@/components/Gift/SendGift";
 import NoFoundPage from "@/pages/404";
 
 const loginPath = '/user/login';
@@ -54,64 +48,7 @@ export const layout: RunTimeLayoutConfig = ({initialState, setInitialState}) => 
     waterMarkProps: {
       content: initialState?.loginUser?.userName,
     },
-    logo: logo,
-    // footerRender: () => <>
-    //   <FloatButton.Group
-    //     trigger="hover"
-    //     style={{right: 94}}
-    //     icon={<BarsOutlined/>}
-    //   >
-    //     <FloatButton
-    //       tooltip={<img src={wechat} alt="微信 code_nav" width="120"/>}
-    //       icon={<WechatOutlined/>}
-    //     />
-    //     <FloatButton
-    //       tooltip={"📘 接口在线文档"}
-    //       icon={<FileTextOutlined/>}
-    //       onClick={() => {
-    //         location.href = "https://doc.qimuu.icu/"
-    //       }
-    //       }
-    //     />
-    //     <FloatButton
-    //       tooltip={"分享此网站"}
-    //       icon={<ExportOutlined/>}
-    //       onClick={() => {
-    //         if (!initialState?.loginUser && location.pathname !== loginPath) {
-    //           message.error("请先登录")
-    //           history.push(loginPath);
-    //           return
-    //         }
-    //         setInitialState({loginUser: initialState?.loginUser, settings: Settings, open: true})
-    //       }
-    //       }/>
-    //     <FloatButton
-    //       tooltip={"查看本站技术及源码，欢迎 star"}
-    //       icon={<GithubOutlined/>}
-    //       onClick={() => {
-    //         location.href = "https://github.com/qimu666/qi-api"
-    //       }
-    //       }
-    //     />
-    //     <FloatButton
-    //       tooltip={"切换主题"}
-    //       icon={<LightColor/>}
-    //       onClick={() => {
-    //         if (initialState?.settings.navTheme === "light") {
-    //           setInitialState({loginUser: initialState?.loginUser, settings: {...Settings, navTheme: "realDark"}})
-    //         } else {
-    //           setInitialState({loginUser: initialState?.loginUser, settings: {...Settings, navTheme: "light"}})
-    //         }
-    //       }
-    //       }
-    //     />
-    //   </FloatButton.Group>
-    //   <SendGift
-    //     invitationCode={initialState?.loginUser?.invitationCode}
-    //     open={initialState?.open}
-    //     onCancel={() => setInitialState({loginUser: initialState?.loginUser, settings: Settings, open: false})
-    //     }></SendGift>
-    // </>,
+    // logo: logo,
     avatarProps: {
       src: valueLength(initialState?.loginUser?.userAvatar) ? initialState?.loginUser?.userAvatar :
         "https://img.qimuu.icu/typory/notLogin.png",
