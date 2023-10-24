@@ -36,7 +36,7 @@ export default {
   },
   pre: {
     '/api/': {
-      target: 'your pre url',
+      target: 'http://110.41.132.124/api/',
       changeOrigin: true,
       pathRewrite: {'^': ''},
     },

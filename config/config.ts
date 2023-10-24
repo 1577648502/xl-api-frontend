@@ -6,9 +6,10 @@ import routes from './routes';
 
 const {REACT_APP_ENV = 'dev'} = process.env;
 export default defineConfig({
-  publicPath: '/dist',
+
+  publicPath: '/dist/',
   manifest: {
-    basePath: '/dist',
+    basePath: '/dist/',
   },
   /**
    * @name 开启 hash 模式
