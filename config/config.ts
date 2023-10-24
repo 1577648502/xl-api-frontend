@@ -129,7 +129,7 @@ export default defineConfig({
   openAPI: [
     {
       requestLibPath: "import { request } from '@umijs/max'",
-      schemaPath: 'http://localhost:8080/v2/api-docs',
+      schemaPath: 'http://127.0.0.1:7529/api/v3/api-docs',
       projectName: 'qiApi-backend',
     },
   ],
