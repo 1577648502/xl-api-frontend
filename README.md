@@ -32,7 +32,7 @@
 
 **🤝 您可以将自己的接口接入到Xl-API 接口开放平台平台上，并发布给其他用户使用。 您可以管理和各个接口，以便更好地分析和优化接口性能。**
 
-**👌 我们还提供了[开发者在线文档](https://doc.qimuu.icu/)和技术支持，帮助您快速接入和发布接口。**
+**👌 我们还提供了[开发者在线文档](http://110.41.132.124:89/)和技术支持，帮助您快速接入和发布接口。**
 
 **🏁 无论您是用户还是开发者，Xl-API 接口开放平台都致力于提供稳定、安全、高效的接口调用服务，帮助您实现更快速、便捷的开发和调用体验。**
 
@@ -45,7 +45,7 @@
 
 -  **[Xl-API 接口开放平台 🔗](https://api.qimuu.icu/)**
 
--  **[Xl-API-DOC 开发者文档 📖](https://doc.qimuu.icu/)**
+-  **[Xl-API-DOC 开发者文档 📖](http://110.41.132.124:89/)**
 -  **[Xl-API-SDK-demo ✔️](https://github.com/qimu666/qi-api-sdk-demo/blob/master/src/main/java/icu/qimuu/qiapisdkdemo/controller/InvokeController.java)**
 
 
@@ -59,7 +59,7 @@
 | **🕸️ [qi-api-gateway](./qi-api-gateway)**             | 网关模块           |
 | **🔗 [qi-api-interface](./qi-api-interface)**          | 接口模块           |
 | **🛠 [qi-qpi-sdk](https://github.com/qimu666/qi-api-sdk)** | 开发者调用sdk      |
-| **📘 [qi-api-doc](https://doc.qimuu.icu/)**            | 接口在线文档       |
+| **📘 [qi-api-doc](http://110.41.132.124:89/)**            | 接口在线文档       |
 | **✔️ [Xl-API-SDK-Demo](https://github.com/qimu666/qi-api-sdk-demo/blob/master/src/main/java/icu/qimuu/qiapisdkdemo/controller/InvokeController.java)** | sdk调用Demo |
 
 ## 项目流程 🗺️
@@ -102,7 +102,7 @@ yarn build or npm run build
 
 - **[Xl-API 接口开放平台 🔗](https://api.qimuu.icu/)**
 
-- **[Xl-API-DOC 开发者文档 📖](https://doc.qimuu.icu/)**
+- **[Xl-API-DOC 开发者文档 📖](http://110.41.132.124:89/)**
 - **[Xl-API-SDK-demo ✔️](https://github.com/qimu666/qi-api-sdk-demo/blob/master/src/main/java/icu/qimuu/qiapisdkdemo/controller/InvokeController.java)**
 
 

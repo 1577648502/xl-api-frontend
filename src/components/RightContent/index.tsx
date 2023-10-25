@@ -15,7 +15,7 @@ export const Docs = () => {
       className="anticon"
       style={{fontSize: 14, fontWeight: "bold"}}
       onClick={() => {
-        window.open('https://doc.qimuu.icu', '_blank')
+        window.open('http://110.41.132.124:89', '_blank')
       }}
     >
         📘 开发者文档
