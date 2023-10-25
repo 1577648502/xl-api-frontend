@@ -6,7 +6,9 @@ import {CopyToClipboard} from 'react-copy-to-clipboard';
 // @ts-ignore
 import docco from 'react-syntax-highlighter/dist/esm/styles/hljs/docco';
 import {CopyOutlined} from "@ant-design/icons";
-import {message} from "antd";
+import {message,Image} from "antd";
+import {toJSON} from "yaml/util";
+import parseJson from "parse-json";
 
 type tProps = {
   codeString?: string;
@@ -17,7 +19,6 @@ type tProps = {
 const CodeHighlighting = (props: tProps) => {
   const {codeString, showLineNumbers = true, language = 'txt'} = props;
   const [isHovered, setIsHovered] = useState(false);
-
   const handleCopy = () => {
     message.success("已复制到粘贴板")
   };
@@ -51,6 +52,7 @@ const CodeHighlighting = (props: tProps) => {
         style={docco}>
         {String(codeString).replace(/\n$/, '')}
       </SyntaxHighlighter>
+
     </div>
   );
 };

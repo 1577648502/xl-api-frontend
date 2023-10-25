@@ -1,10 +1,12 @@
 import '@umijs/max';
 import React from 'react';
-import {Button, Empty, Form, Select, Space, Spin} from "antd";
+import {Button, Empty, Form, Select, Space, Spin, Image, Col, Row} from "antd";
 import {DEFAULT_ADD_FIELD, requestParam} from "@/pages/InterfaceInfo/components/CodeTemplate";
 import CodeHighlighting from "@/components/CodeHighlighting";
 import Search from "antd/es/input/Search";
 import ParamsTable from "@/components/ParamsTable";
+import parseJson from "parse-json";
+import {lowerFirst} from "lodash";
 
 export type Props = {
   data?: API.InterfaceInfo;
@@ -16,8 +18,10 @@ export type Props = {
   form: any
   resultLoading: boolean
 };
+
 const ToolsTab: React.FC<Props> = (props) => {
   const {onSearch, data,form, temporaryParams, paramsTableChange, result, resultLoading, requestExampleActiveTabKey} = props;
+
   const selectAfter = (
     <Select
       disabled
@@ -31,6 +35,7 @@ const ToolsTab: React.FC<Props> = (props) => {
       ]}
     />
   );
+
   return <>
     <Form
       form={form}
@@ -60,12 +65,25 @@ const ToolsTab: React.FC<Props> = (props) => {
       </Form.Item>
     </Form>
     <p className="highlightLine" style={{marginTop: 25}}>返回结果：</p>
-    <Spin spinning={resultLoading}>
-      {result ?
-        <CodeHighlighting codeString={result} language={requestExampleActiveTabKey}/>
-        : <Empty description={"未发起调用，暂无请求信息"}/>
-      }
-    </Spin>
+    <Row>
+      <Col span={result&& parseJson(result).data.imgurl?8:0}>
+        <Image
+          placeholder
+          key={result ? parseJson(result).data.imgurl : ""}
+          width={500}
+          src={result? parseJson(result).data.imgurl:""}
+        />
+      </Col>
+      <Col span={result&& parseJson(result).data.imgurl?16:24}>
+        <Spin spinning={resultLoading}>
+          {result ?
+            <CodeHighlighting codeString={result} language={requestExampleActiveTabKey}/>
+            : <Empty description={"未发起调用，暂无请求信息"}/>
+          }
+        </Spin>
+      </Col>
+    </Row>
+
   </>
 };
 export default ToolsTab;
