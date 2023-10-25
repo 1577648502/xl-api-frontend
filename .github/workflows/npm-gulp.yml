@@ -47,4 +47,4 @@ jobs:
           command_timeout: 10m
           source: "./dist/*"
           rm: true
-          target: "/www/wwwroot/doc"
+          target: "/www/wwwroot/xlApi"
