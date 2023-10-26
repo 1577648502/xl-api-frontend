@@ -2,7 +2,6 @@ import {Card, message, QRCode, Radio, Spin, Tooltip} from 'antd';
 import React, {useEffect, useState} from 'react';
 import {history} from '@umijs/max';
 
-import wechat from "../../../../public/assets/WeChat.jpg";
 import WxPay from "@/components/Icon/WxPay";
 import ProCard from "@ant-design/pro-card";
 import Alipay from "@/components/Icon/Alipay";

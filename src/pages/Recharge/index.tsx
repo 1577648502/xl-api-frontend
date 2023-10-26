@@ -4,7 +4,6 @@ import ProCard, {CheckCard} from "@ant-design/pro-card";
 import KunCoin from "@/components/Icon/KunCoin";
 import {history, useModel} from "@umijs/max";
 import {listProductInfoByPageUsingGET} from "@/services/qiApi-backend/productInfoController";
-import wechat from "../../../public/assets/WeChat.jpg";
 import {getLoginUserUsingGET} from "@/services/qiApi-backend/userController";
 import Settings from "../../../config/defaultSettings";
 
