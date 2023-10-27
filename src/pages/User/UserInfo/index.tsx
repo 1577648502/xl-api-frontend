@@ -20,7 +20,7 @@ import {
   getLoginUserUsingGET,
   updateUserUsingPOST,
   updateVoucherUsingPOST,
-  userBindEmailUsingPOST,
+  userBindEmailUsingPOST, userLogoutUsingPOST,
   userUnBindEmailUsingPOST
 } from "@/services/qiApi-backend/userController";
 import Settings from '../../../../config/defaultSettings';
@@ -30,6 +30,7 @@ import {requestConfig} from "@/requestConfig";
 import {doDailyCheckInUsingPOST} from "@/services/qiApi-backend/dailyCheckInController";
 import SendGiftModal from "@/components/Gift/SendGift";
 import EmailModal from "@/components/EmailModal";
+import PasswordModal from "@/components/PasswordModal";
 
 export const valueLength = (val: any) => {
   return val && val.trim().length > 0
@@ -49,6 +50,8 @@ const UserInfo: React.FC = () => {
   const [userName, setUserName] = useState<string | undefined>('');
   const [open, setOpen] = useState(false);
   const [openEmailModal, setOpenEmailModal] = useState(false);
+  const [openPasswordModal,setOpenPasswordModal] = useState(false);
+
 
   const ref1 = useRef(null);
   const ref2 = useRef(null);
@@ -273,6 +276,23 @@ const UserInfo: React.FC = () => {
       message.error(defaultLoginFailureMessage);
     }
   };
+  const handleSetPassword = async (values: API.UserUpdateRequest) => {
+    try {
+      // 绑定邮箱
+      const res = await updateUserUsingPOST({
+        ...values,
+      });
+      if (res.data && res.code === 0) {
+        setOpenEmailModal(false)
+        message.success('修改成功');
+        await userLogoutUsingPOST()
+        history.push('/user/login');
+      }
+    } catch (error) {
+      const defaultLoginFailureMessage = '操作失败！';
+      message.error(defaultLoginFailureMessage);
+    }
+  };
   const handleUnBindEmailSubmit = async (values: API.UserUnBindEmailRequest) => {
     try {
       // 绑定邮箱
@@ -307,6 +327,12 @@ const UserInfo: React.FC = () => {
                   setOpenEmailModal(true)
                 }
                 }>{loginUser?.email ? '更新邮箱' : "绑定邮箱"}</Button>
+              </Tooltip>
+              <Tooltip title={"用于修改密码"}>
+                <Button style={{marginLeft: 10}} onClick={() => {
+                  setOpenPasswordModal(true)
+                }
+                }>{'设置密码'}</Button>
               </Tooltip>
               <Tooltip title={"提交修改的信息"}>
                 <Button style={{marginLeft: 10}} onClick={updateUserInfo}>提交修改</Button>
@@ -458,6 +484,9 @@ const UserInfo: React.FC = () => {
       <EmailModal unbindSubmit={handleUnBindEmailSubmit} bindSubmit={handleBindEmailSubmit} data={loginUser}
                   onCancel={() => setOpenEmailModal(false)}
                   open={openEmailModal}/>
+      <PasswordModal  setPassword={handleSetPassword} data={loginUser}
+                  onCancel={() => setOpenPasswordModal(false)}
+                  open={openPasswordModal}/>
       <Tour open={openTour} onClose={() => {
         setOpenTour(false)
         localStorage.setItem('tour', "true");
