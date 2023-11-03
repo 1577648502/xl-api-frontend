@@ -88,7 +88,7 @@ const Login: React.FC = () => {
           }}
           logo={<img alt="logo" src="http://110.41.132.124:9000/public/KgKkdTOM-WX20230508-175957%402x.png"/>}
           title="Xl-API 接口开放平台"
-          subTitle={'Xl-API 接口开放平台致力于提供稳定、安全、高效的接口调用服务'}
+          subTitle={'Xl-API 接口开放平台致力于提供稳定、安全、高效的接口调用服务，测试账号：admin，密码admin'}
           initialValues={{
             autoLogin: true,
           }}
