@@ -15,7 +15,8 @@ export const Docs = () => {
       className="anticon"
       style={{fontSize: 14, fontWeight: "bold"}}
       onClick={() => {
-        window.open('http://110.41.132.124:89', '_blank')
+        // window.open('http://110.41.132.124:89', '_blank')
+        window.open('http://127.0.0.1:8080', '_blank')
       }}
     >
         📘 开发者文档

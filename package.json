@@ -1,7 +1,6 @@
 {
-  "name": "ant-design-pro",
+  "name": "xl-api",
   "version": "6.0.0",
-  "private": true,
   "description": "An out-of-box UI solution for enterprise applications",
   "repository": {
   "type": "git",
@@ -33,6 +32,10 @@
     "tsc": "tsc --noEmit",
     "baiduPush": "bash baiduPush.sh"
   },
+"repository": {
+  "type": "git",
+    "url": "git+https://github.com/1577648502/xl-api-frontend"
+},
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
     "**/*.{js,jsx,tsx,ts,less,md,json}": [
